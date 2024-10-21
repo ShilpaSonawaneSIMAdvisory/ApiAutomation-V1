@@ -1,0 +1,93 @@
+{
+    "tab_name": "NRP_Pricing_Part_OEM_Base_Price",
+    "test_case_flow": {
+        "inputs": [
+            {
+                "sequence": 1,
+                "action": "POST",
+                "entity": "035 - Base Price",
+                "url": "api/v1/data-api/entity/129/data/filter",
+                "identifier_attributes": [
+                    "code"
+                ]
+            },
+            {
+                "sequence": 2,
+                "action": "PUT",
+                "entity": "035 - Base Price",
+                "url": "api/v1/data-api/entity/129/data",
+                "identifier_attributes": [
+                    "code"
+                ],
+                "input_attributes": [
+                    "base_file_code",
+                    "part_number_code",
+                    "part_oem_active_flag_code",
+                    "part_oem_special_pricing",
+                    "currency"
+                ]
+            },
+            {
+                "sequence": 3,
+                "action": "POST",
+                "entity": "p_Base File",
+                "url": "api/v1/data-api/entity/128/data/filter",
+                "identifier_attributes": [
+                    "code"
+                ]
+            },
+            {
+                "sequence": 4,
+                "action": "PUT",
+                "entity": "p_Base File",
+                "url": "api/v1/data-api/entity/128/data",
+                "identifier_attributes": [
+                    "code"
+                ],
+                "input_attributes": [
+                    "currency_code",
+                    "channel_pricing_channel_code"
+                ]
+            },
+            {
+                "sequence": 5,
+                "action": "POST",
+                "entity": "040 - Part OEM",
+                "url": "api/v1/data-api/entity/145/data/filter",
+                "identifier_attributes": [
+                    "part_number_code"
+                ]
+            },
+            {
+                "sequence": 6,
+                "action": "PUT",
+                "entity": "040 - Part OEM",
+                "url": "api/v1/data-api/entity/145/data",
+                "identifier_attributes": [
+                    "part_number_code"
+                ],
+                "input_attributes": [
+                    "oem_channel_code",
+                    "active_flag_code",
+                    "special_pricing_code"
+                ]
+            }
+        ],
+        "outputs": [
+            {
+                "sequence": 1,
+                "action": "POST",
+                "entity": "035 - Base Price",
+                "url": "api/v1/data-api/entity/129/data/filter",
+                "identifier_attributes": [
+                    "code"
+                ],
+                "output_attributes": [
+                    "part_oem_active_flag_code",
+                    "part_oem_special_pricing",
+                    "currency"
+                ]
+            }
+        ]
+    }
+}

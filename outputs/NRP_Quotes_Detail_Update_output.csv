@@ -1,0 +1,710 @@
+INPUTS::160 - QUOTE DETAIL::QUOTE_ID_CODE,INPUTS::160 - QUOTE DETAIL::CURRENCY_CODE,INPUTS::160 - QUOTE DETAIL::PRICING_ADMIN_OWNER_CODE,INPUTS::160 - QUOTE DETAIL::PART_NUMBER_CODE,INPUTS::160 - QUOTE DETAIL::BEGIN_DATE,INPUTS::160 - QUOTE DETAIL::END_DATE,INPUTS::160 - QUOTE DETAIL::ACTIVE_CODE,INPUTS::160 - QUOTE DETAIL::QUOTE_REGION_CODE,INPUTS::160 - QUOTE DETAIL::PREVIOUS_DN,INPUTS::160 - QUOTE DETAIL::CODE,INPUTS::160 - QUOTE DETAIL::WAIVER_FLAG,INPUTS::160 - QUOTE DETAIL::SUGGESTED_MIN_QUOTED_PRICE,INPUTS::160 - QUOTE DETAIL::QUOTE_PRICE,INPUTS::150 - QUOTE::CODE,INPUTS::150 - QUOTE::PRICING_REGION_CODE,INPUTS::150 - QUOTE::PRICING_ADMIN_OWNER_CODE,INPUTS::150 - QUOTE::HAS_WAIVER_APPROVED,INPUTS::150 - QUOTE::QUOTE_YEAR,INPUTS::S_QUOTES CURRENCY::CURRENCY_CODE,INPUTS::S_QUOTES CURRENCY::PRICING_ADMIN_OWNER_CODE,INPUTS::S_QUOTES CURRENCY::FUTURE_EFFECTIVE_DATE,INPUTS::S_QUOTES CURRENCY::EXCHANGE_RATE,INPUTS::S_QUOTES CURRENCY::FUTURE_EXCHANGE_RATE,INPUTS::030 - DN PRICING::REGION_CODE,INPUTS::030 - DN PRICING::PRICING_ADMIN_OWNER,INPUTS::030 - DN PRICING::PART_NUMBER,INPUTS::030 - DN PRICING::CURRENT_EFFECTIVE_DATE,INPUTS::030 - DN PRICING::PUBLISH_EFFECTIVE_DATE,INPUTS::030 - DN PRICING::CURRENT_PRICE,INPUTS::030 - DN PRICING::PUBLISH_PRICE,INPUTS::010 - PART::CODE,OUTPUTS::160 - QUOTE DETAIL::CODE,OUTPUTS::160 - QUOTE DETAIL::PREVIOUS_DN,OUTPUTS::160 - QUOTE DETAIL::PREVIOUS_DN_EFFECTIVE_DATE,OUTPUTS::160 - QUOTE DETAIL::FUTURE_DN,OUTPUTS::160 - QUOTE DETAIL::FUTURE_DN_EFFECTIVE_DATE,OUTPUTS::160 - QUOTE DETAIL::DN_PERCENT_CHANGE,OUTPUTS::160 - QUOTE DETAIL::SUGGESTED_MIN_QUOTED_PRICE,OUTPUTS::160 - QUOTE DETAIL::PCT_DIFFERENCE_PREV_QUOTE_AND_PREV_DN,OUTPUTS::160 - QUOTE DETAIL::PCT_DIFFERENCE_SUGGESTED_QUOTE_AND_FUTURE_DN,OUTPUTS::160 - QUOTE DETAIL::FUTURE_SUGGESTED_MIN_QUOTED_PRICE,OUTPUTS::160 - QUOTE DETAIL::WAIVER_FLAG,OUTPUTS::160 - QUOTE DETAIL::SUGGESTED_ACTION,OUTPUTS::150 - QUOTE::CODE,OUTPUTS::150 - QUOTE::HAS_WAIVER_APPROVED,AUTOMATED_STATUS,ADDITIONAL_COMMENTS
+6031331,USD,EBU,301821100,2024-01-24 00:00:00,2023-12-31 00:00:00,Yes,,,,,,,6031331,25,EBU,,,USD,EBU,NULL,1,NULL,25,EBU,301821100,2024-01-02 00:00:00,2024-07-01 00:00:00,1507.75,1522.83,,330045,NULL,5555-11-22 12:34:56,-98765432101234507776,5555-11-22 12:34:56,,,,,,,,,,FAIL,"Exception encountered while processing the test case, row -- 1 ||| Sequence -- 1 ||| Entity -- 160 - QUOTE DETAIL                            
+Exception details: Traceback (most recent call last):
+  File ""C:\Users\SUTANU\Desktop\phase2\test.py"", line 342, in main
+    responseFromPreviousStep = processEachStep(
+        action,
+    ...<6 lines>...
+        test_case,
+    )
+  File ""C:\Users\SUTANU\Desktop\phase2\test.py"", line 198, in processEachStep
+    raise ValueError(
+        f""\nMessage:{data['message']}\nNo output returned for entity: {entity}!\nAction -- {action} ||| Response Status code -- {response.status_code} ||| URL -- {url} \nPayload -- {json.dumps(payload)}""
+    )
+ValueError: 
+Message:Access database using Jooq; bad SQL grammar [select * from getEntityViewData(?,?::varchar[],?::varchar[],?,?,?,?,?,?,?,?)]; nested exception is org.postgresql.util.PSQLException: ERROR: collations are not supported by type integer
+  Where: PL/pgSQL function getentityviewdata(text,text[],text[],integer,text,text,integer,integer,boolean,text,text) line 157 at EXECUTE
+No output returned for entity: 160 - QUOTE DETAIL!
+Action -- POST ||| Response Status code -- 500 ||| URL -- https://nrp.test.simadvisory.com/api/v1/data-api/entity/150/data/filter 
+Payload -- {""pager"": {""pageNumber"": 0, ""pageSize"": 1}, ""sorters"": [{""direction"": ""DESC"", ""property"": ""id""}], ""filters"": [{""filterType"": ""CONDITION"", ""joinType"": ""NONE"", ""operatorType"": ""EQUALS"", ""key"": ""code"", ""value"": 330045, ""dataType"": ""string""}]}
+"
+2021 DCC RECVREP,USD,EBU,364941700 D,2021-01-02 00:00:00,2012-12-31 00:00:00,Yes,,,,,,,2021 DCC RECVREP,42,EBU,,,USD,EBU,NULL,1,NULL,42,EBU,364941700 D,2018-08-13 13:08:07,NULL,14000,NULL,,57569,NULL,5555-11-22 12:34:56,-98765432101234507776,5555-11-22 12:34:56,,,,,,,,,,FAIL,"Exception encountered while processing the test case, row -- 2 ||| Sequence -- 1 ||| Entity -- 160 - QUOTE DETAIL                            
+Exception details: Traceback (most recent call last):
+  File ""C:\Users\SUTANU\Desktop\phase2\test.py"", line 342, in main
+    responseFromPreviousStep = processEachStep(
+        action,
+    ...<6 lines>...
+        test_case,
+    )
+  File ""C:\Users\SUTANU\Desktop\phase2\test.py"", line 198, in processEachStep
+    raise ValueError(
+        f""\nMessage:{data['message']}\nNo output returned for entity: {entity}!\nAction -- {action} ||| Response Status code -- {response.status_code} ||| URL -- {url} \nPayload -- {json.dumps(payload)}""
+    )
+ValueError: 
+Message:Access database using Jooq; bad SQL grammar [select * from getEntityViewData(?,?::varchar[],?::varchar[],?,?,?,?,?,?,?,?)]; nested exception is org.postgresql.util.PSQLException: ERROR: collations are not supported by type integer
+  Where: PL/pgSQL function getentityviewdata(text,text[],text[],integer,text,text,integer,integer,boolean,text,text) line 157 at EXECUTE
+No output returned for entity: 160 - QUOTE DETAIL!
+Action -- POST ||| Response Status code -- 500 ||| URL -- https://nrp.test.simadvisory.com/api/v1/data-api/entity/150/data/filter 
+Payload -- {""pager"": {""pageNumber"": 0, ""pageSize"": 1}, ""sorters"": [{""direction"": ""DESC"", ""property"": ""id""}], ""filters"": [{""filterType"": ""CONDITION"", ""joinType"": ""NONE"", ""operatorType"": ""EQUALS"", ""key"": ""code"", ""value"": 57569, ""dataType"": ""string""}]}
+"
+6031331,USD,EBU,554178400,2024-02-14 00:00:00,2023-12-31 00:00:00,Yes,,,,,,,6031331,25,EBU,,,USD,EBU,NULL,1,NULL,25,EBU,554178400,2024-01-02 00:00:00,2024-07-01 00:00:00,863,871.63,,330552,NULL,5555-11-22 12:34:56,-98765432101234507776,5555-11-22 12:34:56,,,,,,,,,,FAIL,"Exception encountered while processing the test case, row -- 3 ||| Sequence -- 1 ||| Entity -- 160 - QUOTE DETAIL                            
+Exception details: Traceback (most recent call last):
+  File ""C:\Users\SUTANU\Desktop\phase2\test.py"", line 342, in main
+    responseFromPreviousStep = processEachStep(
+        action,
+    ...<6 lines>...
+        test_case,
+    )
+  File ""C:\Users\SUTANU\Desktop\phase2\test.py"", line 198, in processEachStep
+    raise ValueError(
+        f""\nMessage:{data['message']}\nNo output returned for entity: {entity}!\nAction -- {action} ||| Response Status code -- {response.status_code} ||| URL -- {url} \nPayload -- {json.dumps(payload)}""
+    )
+ValueError: 
+Message:Access database using Jooq; bad SQL grammar [select * from getEntityViewData(?,?::varchar[],?::varchar[],?,?,?,?,?,?,?,?)]; nested exception is org.postgresql.util.PSQLException: ERROR: collations are not supported by type integer
+  Where: PL/pgSQL function getentityviewdata(text,text[],text[],integer,text,text,integer,integer,boolean,text,text) line 157 at EXECUTE
+No output returned for entity: 160 - QUOTE DETAIL!
+Action -- POST ||| Response Status code -- 500 ||| URL -- https://nrp.test.simadvisory.com/api/v1/data-api/entity/150/data/filter 
+Payload -- {""pager"": {""pageNumber"": 0, ""pageSize"": 1}, ""sorters"": [{""direction"": ""DESC"", ""property"": ""id""}], ""filters"": [{""filterType"": ""CONDITION"", ""joinType"": ""NONE"", ""operatorType"": ""EQUALS"", ""key"": ""code"", ""value"": 330552, ""dataType"": ""string""}]}
+"
+2021 RECVREP DCC,USD,EBU,537184300,2021-01-02 00:00:00,2020-12-31 00:00:00,Yes,,,,,,,2021 RECVREP DCC,42,EBU,,,USD,EBU,NULL,1,NULL,42,EBU,537184300,2021-01-02 00:00:00,NULL,1550,NULL,,57560,NULL,5555-11-22 12:34:56,-98765432101234507776,5555-11-22 12:34:56,,,,,,,,,,FAIL,"Exception encountered while processing the test case, row -- 4 ||| Sequence -- 1 ||| Entity -- 160 - QUOTE DETAIL                            
+Exception details: Traceback (most recent call last):
+  File ""C:\Users\SUTANU\Desktop\phase2\test.py"", line 342, in main
+    responseFromPreviousStep = processEachStep(
+        action,
+    ...<6 lines>...
+        test_case,
+    )
+  File ""C:\Users\SUTANU\Desktop\phase2\test.py"", line 198, in processEachStep
+    raise ValueError(
+        f""\nMessage:{data['message']}\nNo output returned for entity: {entity}!\nAction -- {action} ||| Response Status code -- {response.status_code} ||| URL -- {url} \nPayload -- {json.dumps(payload)}""
+    )
+ValueError: 
+Message:Access database using Jooq; bad SQL grammar [select * from getEntityViewData(?,?::varchar[],?::varchar[],?,?,?,?,?,?,?,?)]; nested exception is org.postgresql.util.PSQLException: ERROR: collations are not supported by type integer
+  Where: PL/pgSQL function getentityviewdata(text,text[],text[],integer,text,text,integer,integer,boolean,text,text) line 157 at EXECUTE
+No output returned for entity: 160 - QUOTE DETAIL!
+Action -- POST ||| Response Status code -- 500 ||| URL -- https://nrp.test.simadvisory.com/api/v1/data-api/entity/150/data/filter 
+Payload -- {""pager"": {""pageNumber"": 0, ""pageSize"": 1}, ""sorters"": [{""direction"": ""DESC"", ""property"": ""id""}], ""filters"": [{""filterType"": ""CONDITION"", ""joinType"": ""NONE"", ""operatorType"": ""EQUALS"", ""key"": ""code"", ""value"": 57560, ""dataType"": ""string""}]}
+"
+6031331,USD,EBU,AR1225100,2024-01-24 00:00:00,2023-12-31 00:00:00,Yes,,,,,,,6031331,25,EBU,,,USD,EBU,NULL,1,NULL,25,EBU,AR1225100,2024-01-02 00:00:00,2024-07-01 00:00:00,1454.83,1469.38,,330046,NULL,5555-11-22 12:34:56,-98765432101234507776,5555-11-22 12:34:56,,,,,,,,,,FAIL,"Exception encountered while processing the test case, row -- 5 ||| Sequence -- 1 ||| Entity -- 160 - QUOTE DETAIL                            
+Exception details: Traceback (most recent call last):
+  File ""C:\Users\SUTANU\Desktop\phase2\test.py"", line 342, in main
+    responseFromPreviousStep = processEachStep(
+        action,
+    ...<6 lines>...
+        test_case,
+    )
+  File ""C:\Users\SUTANU\Desktop\phase2\test.py"", line 198, in processEachStep
+    raise ValueError(
+        f""\nMessage:{data['message']}\nNo output returned for entity: {entity}!\nAction -- {action} ||| Response Status code -- {response.status_code} ||| URL -- {url} \nPayload -- {json.dumps(payload)}""
+    )
+ValueError: 
+Message:Access database using Jooq; bad SQL grammar [select * from getEntityViewData(?,?::varchar[],?::varchar[],?,?,?,?,?,?,?,?)]; nested exception is org.postgresql.util.PSQLException: ERROR: collations are not supported by type integer
+  Where: PL/pgSQL function getentityviewdata(text,text[],text[],integer,text,text,integer,integer,boolean,text,text) line 157 at EXECUTE
+No output returned for entity: 160 - QUOTE DETAIL!
+Action -- POST ||| Response Status code -- 500 ||| URL -- https://nrp.test.simadvisory.com/api/v1/data-api/entity/150/data/filter 
+Payload -- {""pager"": {""pageNumber"": 0, ""pageSize"": 1}, ""sorters"": [{""direction"": ""DESC"", ""property"": ""id""}], ""filters"": [{""filterType"": ""CONDITION"", ""joinType"": ""NONE"", ""operatorType"": ""EQUALS"", ""key"": ""code"", ""value"": 330046, ""dataType"": ""string""}]}
+"
+2019 CSSK,USD,EBU,430710200,2019-03-01 00:00:00,2019-04-16 00:00:00,No,,,,,,,2019 CSSK,19,EBU,,,USD,EBU,NULL,1,NULL,19,EBU,430710200,2019-01-02 00:00:00,NULL,92.54,NULL,,5413,92.54,2019-01-02 00:00:00,-98765432101234507776,5555-11-22 12:34:56,,,,,,,,,,FAIL,"Exception encountered while processing the test case, row -- 6 ||| Sequence -- 1 ||| Entity -- 160 - QUOTE DETAIL                            
+Exception details: Traceback (most recent call last):
+  File ""C:\Users\SUTANU\Desktop\phase2\test.py"", line 342, in main
+    responseFromPreviousStep = processEachStep(
+        action,
+    ...<6 lines>...
+        test_case,
+    )
+  File ""C:\Users\SUTANU\Desktop\phase2\test.py"", line 198, in processEachStep
+    raise ValueError(
+        f""\nMessage:{data['message']}\nNo output returned for entity: {entity}!\nAction -- {action} ||| Response Status code -- {response.status_code} ||| URL -- {url} \nPayload -- {json.dumps(payload)}""
+    )
+ValueError: 
+Message:Access database using Jooq; bad SQL grammar [select * from getEntityViewData(?,?::varchar[],?::varchar[],?,?,?,?,?,?,?,?)]; nested exception is org.postgresql.util.PSQLException: ERROR: collations are not supported by type integer
+  Where: PL/pgSQL function getentityviewdata(text,text[],text[],integer,text,text,integer,integer,boolean,text,text) line 157 at EXECUTE
+No output returned for entity: 160 - QUOTE DETAIL!
+Action -- POST ||| Response Status code -- 500 ||| URL -- https://nrp.test.simadvisory.com/api/v1/data-api/entity/150/data/filter 
+Payload -- {""pager"": {""pageNumber"": 0, ""pageSize"": 1}, ""sorters"": [{""direction"": ""DESC"", ""property"": ""id""}], ""filters"": [{""filterType"": ""CONDITION"", ""joinType"": ""NONE"", ""operatorType"": ""EQUALS"", ""key"": ""code"", ""value"": 5413, ""dataType"": ""string""}]}
+"
+9261,GBP,CTT,403411100,2020-09-01 00:00:00,2020-12-31 00:00:00,No,,,,,,,9261,26,CTT,,,GBP,CTT,NULL,0.7902,NULL,26,CTT,403411100,2020-01-24 08:28:15.563000,NULL,423.74,NULL,,49375,334.84,2020-01-24 08:28:15.563000,-98765432101234507776,5555-11-22 12:34:56,,,,,,,,,,FAIL,"Exception encountered while processing the test case, row -- 7 ||| Sequence -- 1 ||| Entity -- 160 - QUOTE DETAIL                            
+Exception details: Traceback (most recent call last):
+  File ""C:\Users\SUTANU\Desktop\phase2\test.py"", line 342, in main
+    responseFromPreviousStep = processEachStep(
+        action,
+    ...<6 lines>...
+        test_case,
+    )
+  File ""C:\Users\SUTANU\Desktop\phase2\test.py"", line 198, in processEachStep
+    raise ValueError(
+        f""\nMessage:{data['message']}\nNo output returned for entity: {entity}!\nAction -- {action} ||| Response Status code -- {response.status_code} ||| URL -- {url} \nPayload -- {json.dumps(payload)}""
+    )
+ValueError: 
+Message:Access database using Jooq; bad SQL grammar [select * from getEntityViewData(?,?::varchar[],?::varchar[],?,?,?,?,?,?,?,?)]; nested exception is org.postgresql.util.PSQLException: ERROR: collations are not supported by type integer
+  Where: PL/pgSQL function getentityviewdata(text,text[],text[],integer,text,text,integer,integer,boolean,text,text) line 157 at EXECUTE
+No output returned for entity: 160 - QUOTE DETAIL!
+Action -- POST ||| Response Status code -- 500 ||| URL -- https://nrp.test.simadvisory.com/api/v1/data-api/entity/150/data/filter 
+Payload -- {""pager"": {""pageNumber"": 0, ""pageSize"": 1}, ""sorters"": [{""direction"": ""DESC"", ""property"": ""id""}], ""filters"": [{""filterType"": ""CONDITION"", ""joinType"": ""NONE"", ""operatorType"": ""EQUALS"", ""key"": ""code"", ""value"": 49375, ""dataType"": ""string""}]}
+"
+333214300,,,,2022-01-01 00:00:00,,,Europe,2.81,,,,,,,,,,,,,,,,,,,,,,,100033,2.81,,-98765432101234507776,,7.6628,-98765432101234507776,24.9,24.9111,-98765432101234507776,,,,,FAIL,"Exception encountered while processing the test case, row -- 8 ||| Sequence -- 1 ||| Entity -- 160 - QUOTE DETAIL                            
+Exception details: Traceback (most recent call last):
+  File ""C:\Users\SUTANU\Desktop\phase2\test.py"", line 312, in main
+    responseFromPreviousStep = processEachStep(
+        action,
+    ...<6 lines>...
+        test_case,
+    )
+  File ""C:\Users\SUTANU\Desktop\phase2\test.py"", line 191, in processEachStep
+    raise ValueError(
+        f""The number of elements returned after applying filters for entity {entity} is less than 1: Elements -- {total_elements} ||| Url -- {url}\nPayload -- {json.dumps(payload)}\n""
+    )
+ValueError: The number of elements returned after applying filters for entity 160 - QUOTE DETAIL is less than 1: Elements -- 0 ||| Url -- https://nrp.test.simadvisory.com/api/v1/data-api/entity/150/data/filter
+Payload -- {""pager"": {""pageNumber"": 0, ""pageSize"": 1}, ""sorters"": [{""direction"": ""DESC"", ""property"": ""id""}], ""filters"": [{""filterType"": ""CONDITION"", ""joinType"": ""NONE"", ""operatorType"": ""EQUALS"", ""key"": ""quote_id_code"", ""value"": 333214300, ""dataType"": ""string""}]}
+
+"
+340842300,,,,2022-01-01 00:00:00,,,Europe,1.73,,,,,,,,,,,,,,,,,,,,,,,100188,1.73,,-98765432101234507776,,3.5928,-98765432101234507776,51.5,51.4451,-98765432101234507776,,,,,FAIL,"Exception encountered while processing the test case, row -- 9 ||| Sequence -- 1 ||| Entity -- 160 - QUOTE DETAIL                            
+Exception details: Traceback (most recent call last):
+  File ""C:\Users\SUTANU\Desktop\phase2\test.py"", line 312, in main
+    responseFromPreviousStep = processEachStep(
+        action,
+    ...<6 lines>...
+        test_case,
+    )
+  File ""C:\Users\SUTANU\Desktop\phase2\test.py"", line 191, in processEachStep
+    raise ValueError(
+        f""The number of elements returned after applying filters for entity {entity} is less than 1: Elements -- {total_elements} ||| Url -- {url}\nPayload -- {json.dumps(payload)}\n""
+    )
+ValueError: The number of elements returned after applying filters for entity 160 - QUOTE DETAIL is less than 1: Elements -- 0 ||| Url -- https://nrp.test.simadvisory.com/api/v1/data-api/entity/150/data/filter
+Payload -- {""pager"": {""pageNumber"": 0, ""pageSize"": 1}, ""sorters"": [{""direction"": ""DESC"", ""property"": ""id""}], ""filters"": [{""filterType"": ""CONDITION"", ""joinType"": ""NONE"", ""operatorType"": ""EQUALS"", ""key"": ""quote_id_code"", ""value"": 340842300, ""dataType"": ""string""}]}
+
+"
+547340000,,,,2020-01-02 00:00:00,,,NESEA,563.98,,,,,,,,,,,,,,,,,,,,,,,10512,563.98,,-98765432101234507776,,-98765432101234507776,-98765432101234507776,14.89,-98765432101234507776,-98765432101234507776,,,,,FAIL,"Exception encountered while processing the test case, row -- 10 ||| Sequence -- 1 ||| Entity -- 160 - QUOTE DETAIL                            
+Exception details: Traceback (most recent call last):
+  File ""C:\Users\SUTANU\Desktop\phase2\test.py"", line 312, in main
+    responseFromPreviousStep = processEachStep(
+        action,
+    ...<6 lines>...
+        test_case,
+    )
+  File ""C:\Users\SUTANU\Desktop\phase2\test.py"", line 191, in processEachStep
+    raise ValueError(
+        f""The number of elements returned after applying filters for entity {entity} is less than 1: Elements -- {total_elements} ||| Url -- {url}\nPayload -- {json.dumps(payload)}\n""
+    )
+ValueError: The number of elements returned after applying filters for entity 160 - QUOTE DETAIL is less than 1: Elements -- 0 ||| Url -- https://nrp.test.simadvisory.com/api/v1/data-api/entity/150/data/filter
+Payload -- {""pager"": {""pageNumber"": 0, ""pageSize"": 1}, ""sorters"": [{""direction"": ""DESC"", ""property"": ""id""}], ""filters"": [{""filterType"": ""CONDITION"", ""joinType"": ""NONE"", ""operatorType"": ""EQUALS"", ""key"": ""quote_id_code"", ""value"": 547340000, ""dataType"": ""string""}]}
+
+"
+380097400,,,,2020-01-01 00:00:00,,,Latin America,NULL,,,,,,,,,,,,,,,,,,,,,,,10467,-98765432101234507776,,-98765432101234507776,,-98765432101234507776,-98765432101234507776,28.36,-98765432101234507776,-98765432101234507776,,,,,FAIL,"Exception encountered while processing the test case, row -- 11 ||| Sequence -- 1 ||| Entity -- 160 - QUOTE DETAIL                            
+Exception details: Traceback (most recent call last):
+  File ""C:\Users\SUTANU\Desktop\phase2\test.py"", line 312, in main
+    responseFromPreviousStep = processEachStep(
+        action,
+    ...<6 lines>...
+        test_case,
+    )
+  File ""C:\Users\SUTANU\Desktop\phase2\test.py"", line 191, in processEachStep
+    raise ValueError(
+        f""The number of elements returned after applying filters for entity {entity} is less than 1: Elements -- {total_elements} ||| Url -- {url}\nPayload -- {json.dumps(payload)}\n""
+    )
+ValueError: The number of elements returned after applying filters for entity 160 - QUOTE DETAIL is less than 1: Elements -- 0 ||| Url -- https://nrp.test.simadvisory.com/api/v1/data-api/entity/150/data/filter
+Payload -- {""pager"": {""pageNumber"": 0, ""pageSize"": 1}, ""sorters"": [{""direction"": ""DESC"", ""property"": ""id""}], ""filters"": [{""filterType"": ""CONDITION"", ""joinType"": ""NONE"", ""operatorType"": ""EQUALS"", ""key"": ""quote_id_code"", ""value"": 380097400, ""dataType"": ""string""}]}
+
+"
+435410000,,,,2022-01-01 00:00:00,,,Europe,157.21,,,,,,,,,,,,,,,,,,,,,,,102657,157.21,,-98765432101234507776,,12.0287,-98765432101234507776,-3.9,-3.8992,-98765432101234507776,,,,,FAIL,"Exception encountered while processing the test case, row -- 12 ||| Sequence -- 1 ||| Entity -- 160 - QUOTE DETAIL                            
+Exception details: Traceback (most recent call last):
+  File ""C:\Users\SUTANU\Desktop\phase2\test.py"", line 312, in main
+    responseFromPreviousStep = processEachStep(
+        action,
+    ...<6 lines>...
+        test_case,
+    )
+  File ""C:\Users\SUTANU\Desktop\phase2\test.py"", line 191, in processEachStep
+    raise ValueError(
+        f""The number of elements returned after applying filters for entity {entity} is less than 1: Elements -- {total_elements} ||| Url -- {url}\nPayload -- {json.dumps(payload)}\n""
+    )
+ValueError: The number of elements returned after applying filters for entity 160 - QUOTE DETAIL is less than 1: Elements -- 0 ||| Url -- https://nrp.test.simadvisory.com/api/v1/data-api/entity/150/data/filter
+Payload -- {""pager"": {""pageNumber"": 0, ""pageSize"": 1}, ""sorters"": [{""direction"": ""DESC"", ""property"": ""id""}], ""filters"": [{""filterType"": ""CONDITION"", ""joinType"": ""NONE"", ""operatorType"": ""EQUALS"", ""key"": ""quote_id_code"", ""value"": 435410000, ""dataType"": ""string""}]}
+
+"
+435410600,,,,2022-01-01 00:00:00,,,Europe,204.98,,,,,,,,,,,,,,,,,,,,,,,102660,204.98,,-98765432101234507776,,12.0231,-98765432101234507776,-23.96,-23.9633,-98765432101234507776,,,,,FAIL,"Exception encountered while processing the test case, row -- 13 ||| Sequence -- 1 ||| Entity -- 160 - QUOTE DETAIL                            
+Exception details: Traceback (most recent call last):
+  File ""C:\Users\SUTANU\Desktop\phase2\test.py"", line 312, in main
+    responseFromPreviousStep = processEachStep(
+        action,
+    ...<6 lines>...
+        test_case,
+    )
+  File ""C:\Users\SUTANU\Desktop\phase2\test.py"", line 191, in processEachStep
+    raise ValueError(
+        f""The number of elements returned after applying filters for entity {entity} is less than 1: Elements -- {total_elements} ||| Url -- {url}\nPayload -- {json.dumps(payload)}\n""
+    )
+ValueError: The number of elements returned after applying filters for entity 160 - QUOTE DETAIL is less than 1: Elements -- 0 ||| Url -- https://nrp.test.simadvisory.com/api/v1/data-api/entity/150/data/filter
+Payload -- {""pager"": {""pageNumber"": 0, ""pageSize"": 1}, ""sorters"": [{""direction"": ""DESC"", ""property"": ""id""}], ""filters"": [{""filterType"": ""CONDITION"", ""joinType"": ""NONE"", ""operatorType"": ""EQUALS"", ""key"": ""quote_id_code"", ""value"": 435410600, ""dataType"": ""string""}]}
+
+"
+430778600,,,,2022-01-01 00:00:00,,,Europe,82.68,,,,,,,,,,,,,,,,,,,,,,,105116,82.68,,-98765432101234507776,,4,-98765432101234507776,-1.87,-1.8746,-98765432101234507776,,,,,FAIL,"Exception encountered while processing the test case, row -- 14 ||| Sequence -- 1 ||| Entity -- 160 - QUOTE DETAIL                            
+Exception details: Traceback (most recent call last):
+  File ""C:\Users\SUTANU\Desktop\phase2\test.py"", line 312, in main
+    responseFromPreviousStep = processEachStep(
+        action,
+    ...<6 lines>...
+        test_case,
+    )
+  File ""C:\Users\SUTANU\Desktop\phase2\test.py"", line 191, in processEachStep
+    raise ValueError(
+        f""The number of elements returned after applying filters for entity {entity} is less than 1: Elements -- {total_elements} ||| Url -- {url}\nPayload -- {json.dumps(payload)}\n""
+    )
+ValueError: The number of elements returned after applying filters for entity 160 - QUOTE DETAIL is less than 1: Elements -- 0 ||| Url -- https://nrp.test.simadvisory.com/api/v1/data-api/entity/150/data/filter
+Payload -- {""pager"": {""pageNumber"": 0, ""pageSize"": 1}, ""sorters"": [{""direction"": ""DESC"", ""property"": ""id""}], ""filters"": [{""filterType"": ""CONDITION"", ""joinType"": ""NONE"", ""operatorType"": ""EQUALS"", ""key"": ""quote_id_code"", ""value"": 430778600, ""dataType"": ""string""}]}
+
+"
+14306600,,,,2022-01-01 00:00:00,,,Africa,48.76,,,,,,,,,,,,,,,,,,,,,,,112926,48.76,,-98765432101234507776,,8.8392,-98765432101234507776,-79.93,-79.9425,-98765432101234507776,,,,,FAIL,"Exception encountered while processing the test case, row -- 15 ||| Sequence -- 1 ||| Entity -- 160 - QUOTE DETAIL                            
+Exception details: Traceback (most recent call last):
+  File ""C:\Users\SUTANU\Desktop\phase2\test.py"", line 312, in main
+    responseFromPreviousStep = processEachStep(
+        action,
+    ...<6 lines>...
+        test_case,
+    )
+  File ""C:\Users\SUTANU\Desktop\phase2\test.py"", line 191, in processEachStep
+    raise ValueError(
+        f""The number of elements returned after applying filters for entity {entity} is less than 1: Elements -- {total_elements} ||| Url -- {url}\nPayload -- {json.dumps(payload)}\n""
+    )
+ValueError: The number of elements returned after applying filters for entity 160 - QUOTE DETAIL is less than 1: Elements -- 0 ||| Url -- https://nrp.test.simadvisory.com/api/v1/data-api/entity/150/data/filter
+Payload -- {""pager"": {""pageNumber"": 0, ""pageSize"": 1}, ""sorters"": [{""direction"": ""DESC"", ""property"": ""id""}], ""filters"": [{""filterType"": ""CONDITION"", ""joinType"": ""NONE"", ""operatorType"": ""EQUALS"", ""key"": ""quote_id_code"", ""value"": 14306600, ""dataType"": ""string""}]}
+
+"
+380299300,,,,2020-01-01 00:00:00,,,CIS,828,,,,,,,,,,,,,,,,,,,,,,,11212,828,,-98765432101234507776,,-98765432101234507776,-98765432101234507776,2.35,-98765432101234507776,-98765432101234507776,,,,,FAIL,"Exception encountered while processing the test case, row -- 16 ||| Sequence -- 1 ||| Entity -- 160 - QUOTE DETAIL                            
+Exception details: Traceback (most recent call last):
+  File ""C:\Users\SUTANU\Desktop\phase2\test.py"", line 312, in main
+    responseFromPreviousStep = processEachStep(
+        action,
+    ...<6 lines>...
+        test_case,
+    )
+  File ""C:\Users\SUTANU\Desktop\phase2\test.py"", line 191, in processEachStep
+    raise ValueError(
+        f""The number of elements returned after applying filters for entity {entity} is less than 1: Elements -- {total_elements} ||| Url -- {url}\nPayload -- {json.dumps(payload)}\n""
+    )
+ValueError: The number of elements returned after applying filters for entity 160 - QUOTE DETAIL is less than 1: Elements -- 0 ||| Url -- https://nrp.test.simadvisory.com/api/v1/data-api/entity/150/data/filter
+Payload -- {""pager"": {""pageNumber"": 0, ""pageSize"": 1}, ""sorters"": [{""direction"": ""DESC"", ""property"": ""id""}], ""filters"": [{""filterType"": ""CONDITION"", ""joinType"": ""NONE"", ""operatorType"": ""EQUALS"", ""key"": ""quote_id_code"", ""value"": 380299300, ""dataType"": ""string""}]}
+
+"
+378677800H,,,,2022-01-02 00:00:00,,,North America,2450,,,,,,,,,,,,,,,,,,,,,,,115441,2450,,-98765432101234507776,,3.3755,-98765432101234507776,37.97,37.9747,-98765432101234507776,,,,,FAIL,"Exception encountered while processing the test case, row -- 17 ||| Sequence -- 1 ||| Entity -- 160 - QUOTE DETAIL                            
+Exception details: Traceback (most recent call last):
+  File ""C:\Users\SUTANU\Desktop\phase2\test.py"", line 312, in main
+    responseFromPreviousStep = processEachStep(
+        action,
+    ...<6 lines>...
+        test_case,
+    )
+  File ""C:\Users\SUTANU\Desktop\phase2\test.py"", line 191, in processEachStep
+    raise ValueError(
+        f""The number of elements returned after applying filters for entity {entity} is less than 1: Elements -- {total_elements} ||| Url -- {url}\nPayload -- {json.dumps(payload)}\n""
+    )
+ValueError: The number of elements returned after applying filters for entity 160 - QUOTE DETAIL is less than 1: Elements -- 0 ||| Url -- https://nrp.test.simadvisory.com/api/v1/data-api/entity/150/data/filter
+Payload -- {""pager"": {""pageNumber"": 0, ""pageSize"": 1}, ""sorters"": [{""direction"": ""DESC"", ""property"": ""id""}], ""filters"": [{""filterType"": ""CONDITION"", ""joinType"": ""NONE"", ""operatorType"": ""EQUALS"", ""key"": ""quote_id_code"", ""value"": ""378677800H"", ""dataType"": ""string""}]}
+
+"
+401170000,,,,2023-01-02 00:00:00,,,Latin America,976.52,,,,,,,,,,,,,,,,,,,,,,,182672,976.52,,1010.7,,11.9579,-98765432101234507776,0,0,-98765432101234507776,,,,,FAIL,"Exception encountered while processing the test case, row -- 18 ||| Sequence -- 1 ||| Entity -- 160 - QUOTE DETAIL                            
+Exception details: Traceback (most recent call last):
+  File ""C:\Users\SUTANU\Desktop\phase2\test.py"", line 312, in main
+    responseFromPreviousStep = processEachStep(
+        action,
+    ...<6 lines>...
+        test_case,
+    )
+  File ""C:\Users\SUTANU\Desktop\phase2\test.py"", line 191, in processEachStep
+    raise ValueError(
+        f""The number of elements returned after applying filters for entity {entity} is less than 1: Elements -- {total_elements} ||| Url -- {url}\nPayload -- {json.dumps(payload)}\n""
+    )
+ValueError: The number of elements returned after applying filters for entity 160 - QUOTE DETAIL is less than 1: Elements -- 0 ||| Url -- https://nrp.test.simadvisory.com/api/v1/data-api/entity/150/data/filter
+Payload -- {""pager"": {""pageNumber"": 0, ""pageSize"": 1}, ""sorters"": [{""direction"": ""DESC"", ""property"": ""id""}], ""filters"": [{""filterType"": ""CONDITION"", ""joinType"": ""NONE"", ""operatorType"": ""EQUALS"", ""key"": ""quote_id_code"", ""value"": 401170000, ""dataType"": ""string""}]}
+
+"
+491687900,,,,2022-01-01 00:00:00,,,Europe,25.2,,,,,,,,,,,,,,,,,,,,,,,102943,25.2,,-98765432101234507776,,-98765432101234507776,-98765432101234507776,NULL,-98765432101234507776,-98765432101234507776,,,,,FAIL,"Exception encountered while processing the test case, row -- 19 ||| Sequence -- 1 ||| Entity -- 160 - QUOTE DETAIL                            
+Exception details: Traceback (most recent call last):
+  File ""C:\Users\SUTANU\Desktop\phase2\test.py"", line 312, in main
+    responseFromPreviousStep = processEachStep(
+        action,
+    ...<6 lines>...
+        test_case,
+    )
+  File ""C:\Users\SUTANU\Desktop\phase2\test.py"", line 191, in processEachStep
+    raise ValueError(
+        f""The number of elements returned after applying filters for entity {entity} is less than 1: Elements -- {total_elements} ||| Url -- {url}\nPayload -- {json.dumps(payload)}\n""
+    )
+ValueError: The number of elements returned after applying filters for entity 160 - QUOTE DETAIL is less than 1: Elements -- 0 ||| Url -- https://nrp.test.simadvisory.com/api/v1/data-api/entity/150/data/filter
+Payload -- {""pager"": {""pageNumber"": 0, ""pageSize"": 1}, ""sorters"": [{""direction"": ""DESC"", ""property"": ""id""}], ""filters"": [{""filterType"": ""CONDITION"", ""joinType"": ""NONE"", ""operatorType"": ""EQUALS"", ""key"": ""quote_id_code"", ""value"": 491687900, ""dataType"": ""string""}]}
+
+"
+532940600,,,,2019-09-05 00:00:00,,,CIS,NULL,,,,,,,,,,,,,,,,,,,,,,,10366,-98765432101234507776,,-98765432101234507776,,-98765432101234507776,-98765432101234507776,NULL,-98765432101234507776,-98765432101234507776,,,,,FAIL,"Exception encountered while processing the test case, row -- 20 ||| Sequence -- 1 ||| Entity -- 160 - QUOTE DETAIL                            
+Exception details: Traceback (most recent call last):
+  File ""C:\Users\SUTANU\Desktop\phase2\test.py"", line 312, in main
+    responseFromPreviousStep = processEachStep(
+        action,
+    ...<6 lines>...
+        test_case,
+    )
+  File ""C:\Users\SUTANU\Desktop\phase2\test.py"", line 191, in processEachStep
+    raise ValueError(
+        f""The number of elements returned after applying filters for entity {entity} is less than 1: Elements -- {total_elements} ||| Url -- {url}\nPayload -- {json.dumps(payload)}\n""
+    )
+ValueError: The number of elements returned after applying filters for entity 160 - QUOTE DETAIL is less than 1: Elements -- 0 ||| Url -- https://nrp.test.simadvisory.com/api/v1/data-api/entity/150/data/filter
+Payload -- {""pager"": {""pageNumber"": 0, ""pageSize"": 1}, ""sorters"": [{""direction"": ""DESC"", ""property"": ""id""}], ""filters"": [{""filterType"": ""CONDITION"", ""joinType"": ""NONE"", ""operatorType"": ""EQUALS"", ""key"": ""quote_id_code"", ""value"": 532940600, ""dataType"": ""string""}]}
+
+"
+341175600,,,,2020-01-01 00:00:00,,,Latin America,NULL,,,,,,,,,,,,,,,,,,,,,,,10406,-98765432101234507776,,-98765432101234507776,,-98765432101234507776,-98765432101234507776,NULL,-98765432101234507776,-98765432101234507776,,,,,FAIL,"Exception encountered while processing the test case, row -- 21 ||| Sequence -- 1 ||| Entity -- 160 - QUOTE DETAIL                            
+Exception details: Traceback (most recent call last):
+  File ""C:\Users\SUTANU\Desktop\phase2\test.py"", line 312, in main
+    responseFromPreviousStep = processEachStep(
+        action,
+    ...<6 lines>...
+        test_case,
+    )
+  File ""C:\Users\SUTANU\Desktop\phase2\test.py"", line 191, in processEachStep
+    raise ValueError(
+        f""The number of elements returned after applying filters for entity {entity} is less than 1: Elements -- {total_elements} ||| Url -- {url}\nPayload -- {json.dumps(payload)}\n""
+    )
+ValueError: The number of elements returned after applying filters for entity 160 - QUOTE DETAIL is less than 1: Elements -- 0 ||| Url -- https://nrp.test.simadvisory.com/api/v1/data-api/entity/150/data/filter
+Payload -- {""pager"": {""pageNumber"": 0, ""pageSize"": 1}, ""sorters"": [{""direction"": ""DESC"", ""property"": ""id""}], ""filters"": [{""filterType"": ""CONDITION"", ""joinType"": ""NONE"", ""operatorType"": ""EQUALS"", ""key"": ""quote_id_code"", ""value"": 341175600, ""dataType"": ""string""}]}
+
+"
+491936300,,,,2024-01-01 00:00:00,2024-12-31 00:00:00,Yes,,,327444,Ready for Review,NULL,1272.88,,,,,,,,,,,,,,,,,,491936300,327444,,,,,,,,,,NULL,Non Saleable Part Quote Approval Required,,,FAIL,"Exception encountered while processing the test case, row -- 22 ||| Sequence -- 1 ||| Entity -- 160 - QUOTE DETAIL                            
+Exception details: Traceback (most recent call last):
+  File ""C:\Users\SUTANU\Desktop\phase2\test.py"", line 312, in main
+    responseFromPreviousStep = processEachStep(
+        action,
+    ...<6 lines>...
+        test_case,
+    )
+  File ""C:\Users\SUTANU\Desktop\phase2\test.py"", line 191, in processEachStep
+    raise ValueError(
+        f""The number of elements returned after applying filters for entity {entity} is less than 1: Elements -- {total_elements} ||| Url -- {url}\nPayload -- {json.dumps(payload)}\n""
+    )
+ValueError: The number of elements returned after applying filters for entity 160 - QUOTE DETAIL is less than 1: Elements -- 0 ||| Url -- https://nrp.test.simadvisory.com/api/v1/data-api/entity/150/data/filter
+Payload -- {""pager"": {""pageNumber"": 0, ""pageSize"": 1}, ""sorters"": [{""direction"": ""DESC"", ""property"": ""id""}], ""filters"": [{""filterType"": ""CONDITION"", ""joinType"": ""NONE"", ""operatorType"": ""EQUALS"", ""key"": ""quote_id_code"", ""value"": 491936300, ""dataType"": ""string""}]}
+
+"
+404715300H,,,,2024-01-01 00:00:00,2024-12-01 00:00:00,Yes,,,273281,Ready for Review,1264.51,1253.67,,,,,,,,,,,,,,,,,,404715300H,273281,,,,,,,,,,Ready For Review,Approve Quote Price less than Min Suggested,,,FAIL,"Exception encountered while processing the test case, row -- 23 ||| Sequence -- 1 ||| Entity -- 160 - QUOTE DETAIL                            
+Exception details: Traceback (most recent call last):
+  File ""C:\Users\SUTANU\Desktop\phase2\test.py"", line 312, in main
+    responseFromPreviousStep = processEachStep(
+        action,
+    ...<6 lines>...
+        test_case,
+    )
+  File ""C:\Users\SUTANU\Desktop\phase2\test.py"", line 191, in processEachStep
+    raise ValueError(
+        f""The number of elements returned after applying filters for entity {entity} is less than 1: Elements -- {total_elements} ||| Url -- {url}\nPayload -- {json.dumps(payload)}\n""
+    )
+ValueError: The number of elements returned after applying filters for entity 160 - QUOTE DETAIL is less than 1: Elements -- 0 ||| Url -- https://nrp.test.simadvisory.com/api/v1/data-api/entity/150/data/filter
+Payload -- {""pager"": {""pageNumber"": 0, ""pageSize"": 1}, ""sorters"": [{""direction"": ""DESC"", ""property"": ""id""}], ""filters"": [{""filterType"": ""CONDITION"", ""joinType"": ""NONE"", ""operatorType"": ""EQUALS"", ""key"": ""quote_id_code"", ""value"": ""404715300H"", ""dataType"": ""string""}]}
+
+"
+KCAUTOOLL,,,,2024-01-01 00:00:00,2024-12-31 00:00:00,Yes,,,327563,Ready for Review,NULL,17835.55,,,,,,,,,,,,,,,,,,KCAUTOOLL,327563,,,,,,,,,,NULL,Non Saleable Part Quote Approval Required,,,FAIL,"Exception encountered while processing the test case, row -- 24 ||| Sequence -- 1 ||| Entity -- 160 - QUOTE DETAIL                            
+Exception details: Traceback (most recent call last):
+  File ""C:\Users\SUTANU\Desktop\phase2\test.py"", line 312, in main
+    responseFromPreviousStep = processEachStep(
+        action,
+    ...<6 lines>...
+        test_case,
+    )
+  File ""C:\Users\SUTANU\Desktop\phase2\test.py"", line 191, in processEachStep
+    raise ValueError(
+        f""The number of elements returned after applying filters for entity {entity} is less than 1: Elements -- {total_elements} ||| Url -- {url}\nPayload -- {json.dumps(payload)}\n""
+    )
+ValueError: The number of elements returned after applying filters for entity 160 - QUOTE DETAIL is less than 1: Elements -- 0 ||| Url -- https://nrp.test.simadvisory.com/api/v1/data-api/entity/150/data/filter
+Payload -- {""pager"": {""pageNumber"": 0, ""pageSize"": 1}, ""sorters"": [{""direction"": ""DESC"", ""property"": ""id""}], ""filters"": [{""filterType"": ""CONDITION"", ""joinType"": ""NONE"", ""operatorType"": ""EQUALS"", ""key"": ""quote_id_code"", ""value"": ""KCAUTOOLL"", ""dataType"": ""string""}]}
+
+"
+392446500,,,,2024-03-27 00:00:00,2024-12-31 00:00:00,Yes,,,331399,Ready for Review,NULL,500,,,,,,,,,,,,,,,,,,392446500,331399,,,,,,,,,,NULL,Non Saleable Part Quote Approval Required,,,FAIL,"Exception encountered while processing the test case, row -- 25 ||| Sequence -- 1 ||| Entity -- 160 - QUOTE DETAIL                            
+Exception details: Traceback (most recent call last):
+  File ""C:\Users\SUTANU\Desktop\phase2\test.py"", line 312, in main
+    responseFromPreviousStep = processEachStep(
+        action,
+    ...<6 lines>...
+        test_case,
+    )
+  File ""C:\Users\SUTANU\Desktop\phase2\test.py"", line 191, in processEachStep
+    raise ValueError(
+        f""The number of elements returned after applying filters for entity {entity} is less than 1: Elements -- {total_elements} ||| Url -- {url}\nPayload -- {json.dumps(payload)}\n""
+    )
+ValueError: The number of elements returned after applying filters for entity 160 - QUOTE DETAIL is less than 1: Elements -- 0 ||| Url -- https://nrp.test.simadvisory.com/api/v1/data-api/entity/150/data/filter
+Payload -- {""pager"": {""pageNumber"": 0, ""pageSize"": 1}, ""sorters"": [{""direction"": ""DESC"", ""property"": ""id""}], ""filters"": [{""filterType"": ""CONDITION"", ""joinType"": ""NONE"", ""operatorType"": ""EQUALS"", ""key"": ""quote_id_code"", ""value"": 392446500, ""dataType"": ""string""}]}
+
+"
+316443800,,,,2024-01-01 00:00:00,2024-12-31 00:00:00,Yes,,,327317,Ready for Review,NULL,6848.08,,,,,,,,,,,,,,,,,,316443800,327317,,,,,,,,,,NULL,Non Saleable Part Quote Approval Required,,,FAIL,"Exception encountered while processing the test case, row -- 26 ||| Sequence -- 1 ||| Entity -- 160 - QUOTE DETAIL                            
+Exception details: Traceback (most recent call last):
+  File ""C:\Users\SUTANU\Desktop\phase2\test.py"", line 312, in main
+    responseFromPreviousStep = processEachStep(
+        action,
+    ...<6 lines>...
+        test_case,
+    )
+  File ""C:\Users\SUTANU\Desktop\phase2\test.py"", line 191, in processEachStep
+    raise ValueError(
+        f""The number of elements returned after applying filters for entity {entity} is less than 1: Elements -- {total_elements} ||| Url -- {url}\nPayload -- {json.dumps(payload)}\n""
+    )
+ValueError: The number of elements returned after applying filters for entity 160 - QUOTE DETAIL is less than 1: Elements -- 0 ||| Url -- https://nrp.test.simadvisory.com/api/v1/data-api/entity/150/data/filter
+Payload -- {""pager"": {""pageNumber"": 0, ""pageSize"": 1}, ""sorters"": [{""direction"": ""DESC"", ""property"": ""id""}], ""filters"": [{""filterType"": ""CONDITION"", ""joinType"": ""NONE"", ""operatorType"": ""EQUALS"", ""key"": ""quote_id_code"", ""value"": 316443800, ""dataType"": ""string""}]}
+
+"
+403335100H,,,,2024-01-01 00:00:00,2024-12-01 00:00:00,Yes,,,273274,Ready for Review,468.54,464.53,,,,,,,,,,,,,,,,,,403335100H,273274,,,,,,,,,,Ready For Review,Approve Quote Price less than Min Suggested,,,FAIL,"Exception encountered while processing the test case, row -- 27 ||| Sequence -- 1 ||| Entity -- 160 - QUOTE DETAIL                            
+Exception details: Traceback (most recent call last):
+  File ""C:\Users\SUTANU\Desktop\phase2\test.py"", line 312, in main
+    responseFromPreviousStep = processEachStep(
+        action,
+    ...<6 lines>...
+        test_case,
+    )
+  File ""C:\Users\SUTANU\Desktop\phase2\test.py"", line 191, in processEachStep
+    raise ValueError(
+        f""The number of elements returned after applying filters for entity {entity} is less than 1: Elements -- {total_elements} ||| Url -- {url}\nPayload -- {json.dumps(payload)}\n""
+    )
+ValueError: The number of elements returned after applying filters for entity 160 - QUOTE DETAIL is less than 1: Elements -- 0 ||| Url -- https://nrp.test.simadvisory.com/api/v1/data-api/entity/150/data/filter
+Payload -- {""pager"": {""pageNumber"": 0, ""pageSize"": 1}, ""sorters"": [{""direction"": ""DESC"", ""property"": ""id""}], ""filters"": [{""filterType"": ""CONDITION"", ""joinType"": ""NONE"", ""operatorType"": ""EQUALS"", ""key"": ""quote_id_code"", ""value"": ""403335100H"", ""dataType"": ""string""}]}
+
+"
+353907100H,,,,2024-01-01 00:00:00,2024-12-01 00:00:00,Yes,,,273266,Ready for Review,126.29,125.05,,,,,,,,,,,,,,,,,,353907100H,273266,,,,,,,,,,Ready For Review,Approve Quote Price less than Min Suggested,,,FAIL,"Exception encountered while processing the test case, row -- 28 ||| Sequence -- 1 ||| Entity -- 160 - QUOTE DETAIL                            
+Exception details: Traceback (most recent call last):
+  File ""C:\Users\SUTANU\Desktop\phase2\test.py"", line 312, in main
+    responseFromPreviousStep = processEachStep(
+        action,
+    ...<6 lines>...
+        test_case,
+    )
+  File ""C:\Users\SUTANU\Desktop\phase2\test.py"", line 191, in processEachStep
+    raise ValueError(
+        f""The number of elements returned after applying filters for entity {entity} is less than 1: Elements -- {total_elements} ||| Url -- {url}\nPayload -- {json.dumps(payload)}\n""
+    )
+ValueError: The number of elements returned after applying filters for entity 160 - QUOTE DETAIL is less than 1: Elements -- 0 ||| Url -- https://nrp.test.simadvisory.com/api/v1/data-api/entity/150/data/filter
+Payload -- {""pager"": {""pageNumber"": 0, ""pageSize"": 1}, ""sorters"": [{""direction"": ""DESC"", ""property"": ""id""}], ""filters"": [{""filterType"": ""CONDITION"", ""joinType"": ""NONE"", ""operatorType"": ""EQUALS"", ""key"": ""quote_id_code"", ""value"": ""353907100H"", ""dataType"": ""string""}]}
+
+"
+535535600H,,,,2024-01-01 00:00:00,2024-12-01 00:00:00,Yes,,,273283,Ready for Review,1479.1,1466.35,,,,,,,,,,,,,,,,,,535535600H,273283,,,,,,,,,,Ready For Review,Approve Quote Price less than Min Suggested,,,FAIL,"Exception encountered while processing the test case, row -- 29 ||| Sequence -- 1 ||| Entity -- 160 - QUOTE DETAIL                            
+Exception details: Traceback (most recent call last):
+  File ""C:\Users\SUTANU\Desktop\phase2\test.py"", line 312, in main
+    responseFromPreviousStep = processEachStep(
+        action,
+    ...<6 lines>...
+        test_case,
+    )
+  File ""C:\Users\SUTANU\Desktop\phase2\test.py"", line 191, in processEachStep
+    raise ValueError(
+        f""The number of elements returned after applying filters for entity {entity} is less than 1: Elements -- {total_elements} ||| Url -- {url}\nPayload -- {json.dumps(payload)}\n""
+    )
+ValueError: The number of elements returned after applying filters for entity 160 - QUOTE DETAIL is less than 1: Elements -- 0 ||| Url -- https://nrp.test.simadvisory.com/api/v1/data-api/entity/150/data/filter
+Payload -- {""pager"": {""pageNumber"": 0, ""pageSize"": 1}, ""sorters"": [{""direction"": ""DESC"", ""property"": ""id""}], ""filters"": [{""filterType"": ""CONDITION"", ""joinType"": ""NONE"", ""operatorType"": ""EQUALS"", ""key"": ""quote_id_code"", ""value"": ""535535600H"", ""dataType"": ""string""}]}
+
+"
+438730500RX,,,,2020-07-24 00:00:00,2920-10-09 00:00:00,No,,,37677,NULL,NULL,418.42,,,,,,,,,,,,,,,,,,438730500RX,37677,,,,,,,,,,Auto,NULL,,,FAIL,"Exception encountered while processing the test case, row -- 30 ||| Sequence -- 1 ||| Entity -- 160 - QUOTE DETAIL                            
+Exception details: Traceback (most recent call last):
+  File ""C:\Users\SUTANU\Desktop\phase2\test.py"", line 312, in main
+    responseFromPreviousStep = processEachStep(
+        action,
+    ...<6 lines>...
+        test_case,
+    )
+  File ""C:\Users\SUTANU\Desktop\phase2\test.py"", line 191, in processEachStep
+    raise ValueError(
+        f""The number of elements returned after applying filters for entity {entity} is less than 1: Elements -- {total_elements} ||| Url -- {url}\nPayload -- {json.dumps(payload)}\n""
+    )
+ValueError: The number of elements returned after applying filters for entity 160 - QUOTE DETAIL is less than 1: Elements -- 0 ||| Url -- https://nrp.test.simadvisory.com/api/v1/data-api/entity/150/data/filter
+Payload -- {""pager"": {""pageNumber"": 0, ""pageSize"": 1}, ""sorters"": [{""direction"": ""DESC"", ""property"": ""id""}], ""filters"": [{""filterType"": ""CONDITION"", ""joinType"": ""NONE"", ""operatorType"": ""EQUALS"", ""key"": ""quote_id_code"", ""value"": ""438730500RX"", ""dataType"": ""string""}]}
+
+"
+302592700,,,,2024-01-01 00:00:00,2024-12-31 00:00:00,No,,,290123,Auto,NULL,-2146826246,,,,,,,,,,,,,,,,,,302592700,290123,,,,,,,,,,Auto,NULL,,,FAIL,"Exception encountered while processing the test case, row -- 31 ||| Sequence -- 1 ||| Entity -- 160 - QUOTE DETAIL                            
+Exception details: Traceback (most recent call last):
+  File ""C:\Users\SUTANU\Desktop\phase2\test.py"", line 312, in main
+    responseFromPreviousStep = processEachStep(
+        action,
+    ...<6 lines>...
+        test_case,
+    )
+  File ""C:\Users\SUTANU\Desktop\phase2\test.py"", line 191, in processEachStep
+    raise ValueError(
+        f""The number of elements returned after applying filters for entity {entity} is less than 1: Elements -- {total_elements} ||| Url -- {url}\nPayload -- {json.dumps(payload)}\n""
+    )
+ValueError: The number of elements returned after applying filters for entity 160 - QUOTE DETAIL is less than 1: Elements -- 0 ||| Url -- https://nrp.test.simadvisory.com/api/v1/data-api/entity/150/data/filter
+Payload -- {""pager"": {""pageNumber"": 0, ""pageSize"": 1}, ""sorters"": [{""direction"": ""DESC"", ""property"": ""id""}], ""filters"": [{""filterType"": ""CONDITION"", ""joinType"": ""NONE"", ""operatorType"": ""EQUALS"", ""key"": ""quote_id_code"", ""value"": 302592700, ""dataType"": ""string""}]}
+
+"
+569374800,,,,2024-01-01 00:00:00,2024-12-31 00:00:00,No,,,273403,Auto,273.97,263.43,,,,,,,,,,,,,,,,,,569374800,273403,,,,,,,,,,Ready For Review,Approve Quote Price less than Min Suggested,,,FAIL,"Exception encountered while processing the test case, row -- 32 ||| Sequence -- 1 ||| Entity -- 160 - QUOTE DETAIL                            
+Exception details: Traceback (most recent call last):
+  File ""C:\Users\SUTANU\Desktop\phase2\test.py"", line 312, in main
+    responseFromPreviousStep = processEachStep(
+        action,
+    ...<6 lines>...
+        test_case,
+    )
+  File ""C:\Users\SUTANU\Desktop\phase2\test.py"", line 191, in processEachStep
+    raise ValueError(
+        f""The number of elements returned after applying filters for entity {entity} is less than 1: Elements -- {total_elements} ||| Url -- {url}\nPayload -- {json.dumps(payload)}\n""
+    )
+ValueError: The number of elements returned after applying filters for entity 160 - QUOTE DETAIL is less than 1: Elements -- 0 ||| Url -- https://nrp.test.simadvisory.com/api/v1/data-api/entity/150/data/filter
+Payload -- {""pager"": {""pageNumber"": 0, ""pageSize"": 1}, ""sorters"": [{""direction"": ""DESC"", ""property"": ""id""}], ""filters"": [{""filterType"": ""CONDITION"", ""joinType"": ""NONE"", ""operatorType"": ""EQUALS"", ""key"": ""quote_id_code"", ""value"": 569374800, ""dataType"": ""string""}]}
+
+"
+1128,,,,,,,,,,Yes,,,6031208,,,NULL,2024,,,,,,,,,,,,,,,,,,,,,,,,,,6031208,Yes,FAIL,"Exception encountered while processing the test case, row -- 33 ||| Sequence -- 1 ||| Entity -- 160 - QUOTE DETAIL                            
+Exception details: Traceback (most recent call last):
+  File ""C:\Users\SUTANU\Desktop\phase2\test.py"", line 312, in main
+    responseFromPreviousStep = processEachStep(
+        action,
+    ...<6 lines>...
+        test_case,
+    )
+  File ""C:\Users\SUTANU\Desktop\phase2\test.py"", line 191, in processEachStep
+    raise ValueError(
+        f""The number of elements returned after applying filters for entity {entity} is less than 1: Elements -- {total_elements} ||| Url -- {url}\nPayload -- {json.dumps(payload)}\n""
+    )
+ValueError: The number of elements returned after applying filters for entity 160 - QUOTE DETAIL is less than 1: Elements -- 0 ||| Url -- https://nrp.test.simadvisory.com/api/v1/data-api/entity/150/data/filter
+Payload -- {""pager"": {""pageNumber"": 0, ""pageSize"": 1}, ""sorters"": [{""direction"": ""DESC"", ""property"": ""id""}], ""filters"": [{""filterType"": ""CONDITION"", ""joinType"": ""NONE"", ""operatorType"": ""EQUALS"", ""key"": ""quote_id_code"", ""value"": 1128, ""dataType"": ""string""}]}
+
+"
+1129,,,,,,,,,,Yes,,,6031209,,,NULL,2024,,,,,,,,,,,,,,,,,,,,,,,,,,6031209,Yes,FAIL,"Exception encountered while processing the test case, row -- 34 ||| Sequence -- 1 ||| Entity -- 160 - QUOTE DETAIL                            
+Exception details: Traceback (most recent call last):
+  File ""C:\Users\SUTANU\Desktop\phase2\test.py"", line 312, in main
+    responseFromPreviousStep = processEachStep(
+        action,
+    ...<6 lines>...
+        test_case,
+    )
+  File ""C:\Users\SUTANU\Desktop\phase2\test.py"", line 191, in processEachStep
+    raise ValueError(
+        f""The number of elements returned after applying filters for entity {entity} is less than 1: Elements -- {total_elements} ||| Url -- {url}\nPayload -- {json.dumps(payload)}\n""
+    )
+ValueError: The number of elements returned after applying filters for entity 160 - QUOTE DETAIL is less than 1: Elements -- 0 ||| Url -- https://nrp.test.simadvisory.com/api/v1/data-api/entity/150/data/filter
+Payload -- {""pager"": {""pageNumber"": 0, ""pageSize"": 1}, ""sorters"": [{""direction"": ""DESC"", ""property"": ""id""}], ""filters"": [{""filterType"": ""CONDITION"", ""joinType"": ""NONE"", ""operatorType"": ""EQUALS"", ""key"": ""quote_id_code"", ""value"": 1129, ""dataType"": ""string""}]}
+
+"
+1309,,,,,,,,,,Yes,,,6031388,,,NULL,2024,,,,,,,,,,,,,,,,,,,,,,,,,,6031388,Yes,FAIL,"Exception encountered while processing the test case, row -- 35 ||| Sequence -- 1 ||| Entity -- 160 - QUOTE DETAIL                            
+Exception details: Traceback (most recent call last):
+  File ""C:\Users\SUTANU\Desktop\phase2\test.py"", line 312, in main
+    responseFromPreviousStep = processEachStep(
+        action,
+    ...<6 lines>...
+        test_case,
+    )
+  File ""C:\Users\SUTANU\Desktop\phase2\test.py"", line 191, in processEachStep
+    raise ValueError(
+        f""The number of elements returned after applying filters for entity {entity} is less than 1: Elements -- {total_elements} ||| Url -- {url}\nPayload -- {json.dumps(payload)}\n""
+    )
+ValueError: The number of elements returned after applying filters for entity 160 - QUOTE DETAIL is less than 1: Elements -- 0 ||| Url -- https://nrp.test.simadvisory.com/api/v1/data-api/entity/150/data/filter
+Payload -- {""pager"": {""pageNumber"": 0, ""pageSize"": 1}, ""sorters"": [{""direction"": ""DESC"", ""property"": ""id""}], ""filters"": [{""filterType"": ""CONDITION"", ""joinType"": ""NONE"", ""operatorType"": ""EQUALS"", ""key"": ""quote_id_code"", ""value"": 1309, ""dataType"": ""string""}]}
+
+"
+1313,,,,,,,,,,Yes,,,6031392,,,NULL,2024,,,,,,,,,,,,,,,,,,,,,,,,,,6031392,Yes,FAIL,"Exception encountered while processing the test case, row -- 36 ||| Sequence -- 1 ||| Entity -- 160 - QUOTE DETAIL                            
+Exception details: Traceback (most recent call last):
+  File ""C:\Users\SUTANU\Desktop\phase2\test.py"", line 312, in main
+    responseFromPreviousStep = processEachStep(
+        action,
+    ...<6 lines>...
+        test_case,
+    )
+  File ""C:\Users\SUTANU\Desktop\phase2\test.py"", line 191, in processEachStep
+    raise ValueError(
+        f""The number of elements returned after applying filters for entity {entity} is less than 1: Elements -- {total_elements} ||| Url -- {url}\nPayload -- {json.dumps(payload)}\n""
+    )
+ValueError: The number of elements returned after applying filters for entity 160 - QUOTE DETAIL is less than 1: Elements -- 0 ||| Url -- https://nrp.test.simadvisory.com/api/v1/data-api/entity/150/data/filter
+Payload -- {""pager"": {""pageNumber"": 0, ""pageSize"": 1}, ""sorters"": [{""direction"": ""DESC"", ""property"": ""id""}], ""filters"": [{""filterType"": ""CONDITION"", ""joinType"": ""NONE"", ""operatorType"": ""EQUALS"", ""key"": ""quote_id_code"", ""value"": 1313, ""dataType"": ""string""}]}
+
+"
+1326,,,,,,,,,,Yes,,,6031405,,,NULL,2024,,,,,,,,,,,,,,,,,,,,,,,,,,6031405,Yes,FAIL,"Exception encountered while processing the test case, row -- 37 ||| Sequence -- 1 ||| Entity -- 160 - QUOTE DETAIL                            
+Exception details: Traceback (most recent call last):
+  File ""C:\Users\SUTANU\Desktop\phase2\test.py"", line 312, in main
+    responseFromPreviousStep = processEachStep(
+        action,
+    ...<6 lines>...
+        test_case,
+    )
+  File ""C:\Users\SUTANU\Desktop\phase2\test.py"", line 191, in processEachStep
+    raise ValueError(
+        f""The number of elements returned after applying filters for entity {entity} is less than 1: Elements -- {total_elements} ||| Url -- {url}\nPayload -- {json.dumps(payload)}\n""
+    )
+ValueError: The number of elements returned after applying filters for entity 160 - QUOTE DETAIL is less than 1: Elements -- 0 ||| Url -- https://nrp.test.simadvisory.com/api/v1/data-api/entity/150/data/filter
+Payload -- {""pager"": {""pageNumber"": 0, ""pageSize"": 1}, ""sorters"": [{""direction"": ""DESC"", ""property"": ""id""}], ""filters"": [{""filterType"": ""CONDITION"", ""joinType"": ""NONE"", ""operatorType"": ""EQUALS"", ""key"": ""quote_id_code"", ""value"": 1326, ""dataType"": ""string""}]}
+
+"
+1337,,,,,,,,,,Yes,,,6031416,,,NULL,2024,,,,,,,,,,,,,,,,,,,,,,,,,,6031416,Yes,FAIL,"Exception encountered while processing the test case, row -- 38 ||| Sequence -- 1 ||| Entity -- 160 - QUOTE DETAIL                            
+Exception details: Traceback (most recent call last):
+  File ""C:\Users\SUTANU\Desktop\phase2\test.py"", line 312, in main
+    responseFromPreviousStep = processEachStep(
+        action,
+    ...<6 lines>...
+        test_case,
+    )
+  File ""C:\Users\SUTANU\Desktop\phase2\test.py"", line 191, in processEachStep
+    raise ValueError(
+        f""The number of elements returned after applying filters for entity {entity} is less than 1: Elements -- {total_elements} ||| Url -- {url}\nPayload -- {json.dumps(payload)}\n""
+    )
+ValueError: The number of elements returned after applying filters for entity 160 - QUOTE DETAIL is less than 1: Elements -- 0 ||| Url -- https://nrp.test.simadvisory.com/api/v1/data-api/entity/150/data/filter
+Payload -- {""pager"": {""pageNumber"": 0, ""pageSize"": 1}, ""sorters"": [{""direction"": ""DESC"", ""property"": ""id""}], ""filters"": [{""filterType"": ""CONDITION"", ""joinType"": ""NONE"", ""operatorType"": ""EQUALS"", ""key"": ""quote_id_code"", ""value"": 1337, ""dataType"": ""string""}]}
+
+"
+1220,,,,,,,,,,Yes,,,6031300,,,NULL,2024,,,,,,,,,,,,,,,,,,,,,,,,,,6031300,Yes,FAIL,"Exception encountered while processing the test case, row -- 39 ||| Sequence -- 1 ||| Entity -- 160 - QUOTE DETAIL                            
+Exception details: Traceback (most recent call last):
+  File ""C:\Users\SUTANU\Desktop\phase2\test.py"", line 312, in main
+    responseFromPreviousStep = processEachStep(
+        action,
+    ...<6 lines>...
+        test_case,
+    )
+  File ""C:\Users\SUTANU\Desktop\phase2\test.py"", line 191, in processEachStep
+    raise ValueError(
+        f""The number of elements returned after applying filters for entity {entity} is less than 1: Elements -- {total_elements} ||| Url -- {url}\nPayload -- {json.dumps(payload)}\n""
+    )
+ValueError: The number of elements returned after applying filters for entity 160 - QUOTE DETAIL is less than 1: Elements -- 0 ||| Url -- https://nrp.test.simadvisory.com/api/v1/data-api/entity/150/data/filter
+Payload -- {""pager"": {""pageNumber"": 0, ""pageSize"": 1}, ""sorters"": [{""direction"": ""DESC"", ""property"": ""id""}], ""filters"": [{""filterType"": ""CONDITION"", ""joinType"": ""NONE"", ""operatorType"": ""EQUALS"", ""key"": ""quote_id_code"", ""value"": 1220, ""dataType"": ""string""}]}
+
+"
+1254,,,,,,,,,,Yes,,,6031333,,,NULL,2024,,,,,,,,,,,,,,,,,,,,,,,,,,6031333,Yes,FAIL,"Exception encountered while processing the test case, row -- 40 ||| Sequence -- 1 ||| Entity -- 160 - QUOTE DETAIL                            
+Exception details: Traceback (most recent call last):
+  File ""C:\Users\SUTANU\Desktop\phase2\test.py"", line 312, in main
+    responseFromPreviousStep = processEachStep(
+        action,
+    ...<6 lines>...
+        test_case,
+    )
+  File ""C:\Users\SUTANU\Desktop\phase2\test.py"", line 191, in processEachStep
+    raise ValueError(
+        f""The number of elements returned after applying filters for entity {entity} is less than 1: Elements -- {total_elements} ||| Url -- {url}\nPayload -- {json.dumps(payload)}\n""
+    )
+ValueError: The number of elements returned after applying filters for entity 160 - QUOTE DETAIL is less than 1: Elements -- 0 ||| Url -- https://nrp.test.simadvisory.com/api/v1/data-api/entity/150/data/filter
+Payload -- {""pager"": {""pageNumber"": 0, ""pageSize"": 1}, ""sorters"": [{""direction"": ""DESC"", ""property"": ""id""}], ""filters"": [{""filterType"": ""CONDITION"", ""joinType"": ""NONE"", ""operatorType"": ""EQUALS"", ""key"": ""quote_id_code"", ""value"": 1254, ""dataType"": ""string""}]}
+
+"
+1212,,,,,,,,,,No,,,6031292,,,Yes,2024,,,,,,,,,,,,,,,,,,,,,,,,,,6031292,Yes,FAIL,"Exception encountered while processing the test case, row -- 41 ||| Sequence -- 1 ||| Entity -- 160 - QUOTE DETAIL                            
+Exception details: Traceback (most recent call last):
+  File ""C:\Users\SUTANU\Desktop\phase2\test.py"", line 312, in main
+    responseFromPreviousStep = processEachStep(
+        action,
+    ...<6 lines>...
+        test_case,
+    )
+  File ""C:\Users\SUTANU\Desktop\phase2\test.py"", line 191, in processEachStep
+    raise ValueError(
+        f""The number of elements returned after applying filters for entity {entity} is less than 1: Elements -- {total_elements} ||| Url -- {url}\nPayload -- {json.dumps(payload)}\n""
+    )
+ValueError: The number of elements returned after applying filters for entity 160 - QUOTE DETAIL is less than 1: Elements -- 0 ||| Url -- https://nrp.test.simadvisory.com/api/v1/data-api/entity/150/data/filter
+Payload -- {""pager"": {""pageNumber"": 0, ""pageSize"": 1}, ""sorters"": [{""direction"": ""DESC"", ""property"": ""id""}], ""filters"": [{""filterType"": ""CONDITION"", ""joinType"": ""NONE"", ""operatorType"": ""EQUALS"", ""key"": ""quote_id_code"", ""value"": 1212, ""dataType"": ""string""}]}
+
+"
+1222,,,,,,,,,,No,,,6031302,,,Yes,2024,,,,,,,,,,,,,,,,,,,,,,,,,,6031302,Yes,FAIL,"Exception encountered while processing the test case, row -- 42 ||| Sequence -- 1 ||| Entity -- 160 - QUOTE DETAIL                            
+Exception details: Traceback (most recent call last):
+  File ""C:\Users\SUTANU\Desktop\phase2\test.py"", line 312, in main
+    responseFromPreviousStep = processEachStep(
+        action,
+    ...<6 lines>...
+        test_case,
+    )
+  File ""C:\Users\SUTANU\Desktop\phase2\test.py"", line 191, in processEachStep
+    raise ValueError(
+        f""The number of elements returned after applying filters for entity {entity} is less than 1: Elements -- {total_elements} ||| Url -- {url}\nPayload -- {json.dumps(payload)}\n""
+    )
+ValueError: The number of elements returned after applying filters for entity 160 - QUOTE DETAIL is less than 1: Elements -- 0 ||| Url -- https://nrp.test.simadvisory.com/api/v1/data-api/entity/150/data/filter
+Payload -- {""pager"": {""pageNumber"": 0, ""pageSize"": 1}, ""sorters"": [{""direction"": ""DESC"", ""property"": ""id""}], ""filters"": [{""filterType"": ""CONDITION"", ""joinType"": ""NONE"", ""operatorType"": ""EQUALS"", ""key"": ""quote_id_code"", ""value"": 1222, ""dataType"": ""string""}]}
+
+"
+1173,,,,,,,,,,No,,,6031253,,,yes,2024,,,,,,,,,,,,,,,,,,,,,,,,,,6031253,Yes,FAIL,"Exception encountered while processing the test case, row -- 43 ||| Sequence -- 1 ||| Entity -- 160 - QUOTE DETAIL                            
+Exception details: Traceback (most recent call last):
+  File ""C:\Users\SUTANU\Desktop\phase2\test.py"", line 312, in main
+    responseFromPreviousStep = processEachStep(
+        action,
+    ...<6 lines>...
+        test_case,
+    )
+  File ""C:\Users\SUTANU\Desktop\phase2\test.py"", line 191, in processEachStep
+    raise ValueError(
+        f""The number of elements returned after applying filters for entity {entity} is less than 1: Elements -- {total_elements} ||| Url -- {url}\nPayload -- {json.dumps(payload)}\n""
+    )
+ValueError: The number of elements returned after applying filters for entity 160 - QUOTE DETAIL is less than 1: Elements -- 0 ||| Url -- https://nrp.test.simadvisory.com/api/v1/data-api/entity/150/data/filter
+Payload -- {""pager"": {""pageNumber"": 0, ""pageSize"": 1}, ""sorters"": [{""direction"": ""DESC"", ""property"": ""id""}], ""filters"": [{""filterType"": ""CONDITION"", ""joinType"": ""NONE"", ""operatorType"": ""EQUALS"", ""key"": ""quote_id_code"", ""value"": 1173, ""dataType"": ""string""}]}
+
+"

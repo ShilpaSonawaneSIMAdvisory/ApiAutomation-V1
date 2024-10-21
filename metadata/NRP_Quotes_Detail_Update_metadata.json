@@ -1,0 +1,168 @@
+{
+    "tab_name": "NRP_Quotes_Detail_Update",
+    "test_case_flow": {
+        "inputs": [
+            {
+                "sequence": 1,
+                "action": "POST",
+                "entity": "160 - Quote Detail",
+                "url": "api/v1/data-api/entity/150/data/filter",
+                "identifier_attributes": [
+                    "quote_id_code"
+                ]
+            },
+            {
+                "sequence": 2,
+                "action": "PUT",
+                "entity": "160 - Quote Detail",
+                "url": "api/v1/data-api/entity/150/data",
+                "identifier_attributes": [
+                    "quote_id_code"
+                ],
+                "input_attributes": [
+                    "currency_code",
+                    "pricing_admin_owner_code",
+                    "part_number_code",
+                    "begin_date",
+                    "end_date",
+                    "active_code",
+                    "quote_region_code",
+                    "previous_dn",
+                    "code",
+                    "waiver_flag",
+                    "suggested_min_quoted_price",
+                    "quote_price"
+                ]
+            },
+            {
+                "sequence": 3,
+                "action": "POST",
+                "entity": "150 - Quote",
+                "url": "api/v1/data-api/entity/126/data/filter",
+                "identifier_attributes": [
+                    "code"
+                ]
+            },
+            {
+                "sequence": 4,
+                "action": "PUT",
+                "entity": "150 - Quote",
+                "url": "api/v1/data-api/entity/126/data",
+                "identifier_attributes": [
+                    "code"
+                ],
+                "input_attributes": [
+                    "pricing_region_code",
+                    "pricing_admin_owner_code",
+                    "has_waiver_approved",
+                    "quote_year"
+                ]
+            },
+            {
+                "sequence": 5,
+                "action": "POST",
+                "entity": "s_Quotes Currency",
+                "url": "api/v1/data-api/entity/172/data/filter",
+                "identifier_attributes": [
+                    "currency_code"
+                ]
+            },
+            {
+                "sequence": 6,
+                "action": "PUT",
+                "entity": "s_Quotes Currency",
+                "url": "api/v1/data-api/entity/172/data",
+                "identifier_attributes": [
+                    "currency_code"
+                ],
+                "input_attributes": [
+                    "pricing_admin_owner_code",
+                    "future_effective_date",
+                    "exchange_rate",
+                    "future_exchange_rate"
+                ]
+            },
+            {
+                "sequence": 7,
+                "action": "POST",
+                "entity": "030 - DN Pricing",
+                "url": "api/v1/data-api/entity/107/data/filter",
+                "identifier_attributes": [
+                    "part_number"
+                ]
+            },
+            {
+                "sequence": 8,
+                "action": "PUT",
+                "entity": "030 - DN Pricing",
+                "url": "api/v1/data-api/entity/107/data",
+                "identifier_attributes": [
+                    "part_number"
+                ],
+                "input_attributes": [
+                    "region_code",
+                    "pricing_admin_owner",
+                    "current_effective_date",
+                    "publish_effective_date",
+                    "current_price",
+                    "publish_price"
+                ]
+            },
+            {
+                "sequence": 9,
+                "action": "POST",
+                "entity": "010 - Part",
+                "url": "api/v1/data-api/entity/98/data/filter",
+                "identifier_attributes": [
+                    "code"
+                ]
+            },
+            {
+                "sequence": 10,
+                "action": "PUT",
+                "entity": "010 - Part",
+                "url": "api/v1/data-api/entity/98/data",
+                "identifier_attributes": [
+                    "code"
+                ],
+                "input_attributes": []
+            }
+        ],
+        "outputs": [
+            {
+                "sequence": 1,
+                "action": "POST",
+                "entity": "160 - Quote Detail",
+                "url": "api/v1/data-api/entity/150/data/filter",
+                "identifier_attributes": [
+                    "code"
+                ],
+                "output_attributes": [
+                    "previous_dn",
+                    "previous_dn_effective_date",
+                    "future_dn",
+                    "future_dn_effective_date",
+                    "dn_percent_change",
+                    "suggested_min_quoted_price",
+                    "pct_difference_prev_quote_and_prev_dn",
+                    "pct_difference_suggested_quote_and_future_dn",
+                    "future_suggested_min_quoted_price",
+                    "waiver_flag",
+                    "suggested_action"
+                ]
+            },
+            {
+                "sequence": 2,
+                "action": "POST",
+                "entity": "150 - Quote",
+                "url": "api/v1/data-api/entity/126/data/filter",
+                "identifier_attributes": [
+                    "code"
+                ],
+                "output_attributes": [
+                    "has_waiver_approved"
+                ]
+            }
+        ]
+    }
+}

@@ -1,0 +1,117 @@
+{
+    "tab_name": "NRP_Regional_Pricing_India_Calc_Reg_Part",
+    "test_case_flow": {
+        "inputs": [
+            {
+                "sequence": 1,
+                "action": "POST",
+                "entity": "070 - Local Part Pricing",
+                "url": "api/v1/data-api/entity/77/data/filter",
+                "identifier_attributes": [
+                    "code"
+                ]
+            },
+            {
+                "sequence": 2,
+                "action": "POST",
+                "entity": "070 - Local Part Pricing",
+                "url": "api/v1/data-api/entity/77/data/filter",
+                "identifier_attributes": [
+                    "code"
+                ],
+                "input_attributes": [
+                    "region_code",
+                    "future_dn_price",
+                    "future_price",
+                    "future_effective_date",
+                    "pricing_action_code"
+                ]
+            },
+            {
+                "sequence": 3,
+                "action": "POST",
+                "entity": "030 - DN Pricing",
+                "url": "api/v1/data-api/entity/107/data/filter",
+                "identifier_attributes": [
+                    "code"
+                ]
+            },
+            {
+                "sequence": 4,
+                "action": "PUT",
+                "entity": "030 - DN Pricing",
+                "url": "api/v1/data-api/entity/107/data",
+                "identifier_attributes": [
+                    "code"
+                ],
+                "input_attributes": [
+                    "future_price",
+                    "future_effective_date",
+                    "pricing_action",
+                    "regional_pricing_flag_code"
+                ]
+            },
+            {
+                "sequence": 5,
+                "action": "POST",
+                "entity": "p_Pricing Region",
+                "url": "api/v1/data-api/entity/27/data/filter",
+                "identifier_attributes": [
+                    "code"
+                ]
+            },
+            {
+                "sequence": 6,
+                "action": "PUT",
+                "entity": "p_Pricing Region",
+                "url": "api/v1/data-api/entity/27/data",
+                "identifier_attributes": [
+                    "code"
+                ],
+                "input_attributes": [
+                    "exchange_rate_currency_code"
+                ]
+            },
+            {
+                "sequence": 7,
+                "action": "POST",
+                "entity": "s_Currency",
+                "url": "api/v1/data-api/entity/25/data/filter",
+                "identifier_attributes": [
+                    "code"
+                ]
+            },
+            {
+                "sequence": 8,
+                "action": "PUT",
+                "entity": "s_Currency",
+                "url": "api/v1/data-api/entity/25/data",
+                "identifier_attributes": [
+                    "code"
+                ],
+                "input_attributes": [
+                    "future_effective_date",
+                    "future_exchange_rate",
+                    "exchange_rate"
+                ]
+            }
+        ],
+        "outputs": [
+            {
+                "sequence": 1,
+                "action": "POST",
+                "entity": "070 - Local Part Pricing",
+                "url": "api/v1/data-api/entity/77/data/filter",
+                "identifier_attributes": [
+                    "code"
+                ],
+                "output_attributes": [
+                    "future_dn_price",
+                    "future_price",
+                    "future_effective_date",
+                    "pricing_action"
+                ]
+            }
+        ]
+    }
+}
