@@ -1,4 +1,4 @@
-name: first workflow
+name: second workflow1
 
 on:
   workflow_dispatch:
@@ -14,4 +14,5 @@ jobs:
        echo: Second output
        echo: Third output
        echo: Fourth output
+       echo: Fifth output
        
