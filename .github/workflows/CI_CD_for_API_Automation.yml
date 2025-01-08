@@ -33,7 +33,7 @@ jobs:
       # Step 4: Run tests
       - name: Run tests
         run: |
-        python automation-v1/outputs/test.py     
+        python apiautomation-v1/outputs/test.py     
         continue-on-error: false
 
   deploy:
