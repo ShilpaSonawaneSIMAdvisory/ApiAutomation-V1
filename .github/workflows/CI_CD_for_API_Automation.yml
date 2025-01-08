@@ -33,7 +33,7 @@ jobs:
       # Step 4: Run tests
       - name: Run tests
         run: |
-        python output/test.py     
+        python outputs/test.py     
         continue-on-error: false
 
   deploy:
