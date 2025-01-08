@@ -33,7 +33,7 @@ jobs:
       # Step 4: Run tests
       - name: Run tests
         run: |
-          pytest tests/ --junitxml=results.xml
+          test tests/ --junitxml=results.xml
         continue-on-error: false
 
   deploy:
